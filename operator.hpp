@@ -19,6 +19,14 @@ class FourOpMock: public Base {
         virtual std::string stringify() { return "4.5"; }
 };
 
+class ZeroOpMock: public Base {
+   public: 
+	ZeroOpMock() { }
+
+	virtual double evaluate() { return 0.0; }
+        virtual std::string stringify() { return "0.0"; }
+};
+
 class Div : public Base {
 	private:
 	  Base* left;
@@ -30,6 +38,9 @@ class Div : public Base {
 		right = op2;
 }
 	virtual double evaluate(){
+ if (this->left->evaluate() == 0.0){
+                throw std::invalid_argument("Invalid");
+}
 	    return this->left->evaluate() / this->right->evaluate(); 
 	 }
 	   virtual std::string stringify() {
