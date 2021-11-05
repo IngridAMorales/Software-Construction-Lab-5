@@ -25,6 +25,13 @@ class ZeroOpMock: public Base {
 
 	virtual double evaluate() { return 0.0; }
         virtual std::string stringify() { return "0.0"; }
+}; 
+class NegOpMock: public Base {
+   public: 
+	NegOpMock() { }
+
+	virtual double evaluate() { return -7.5; }
+	virtual std::string stringify() { return "-7.5"; }
 };
 
 class Div : public Base {
@@ -38,17 +45,12 @@ class Div : public Base {
 		right = op2;
 }
 	virtual double evaluate(){
- if (this->left->evaluate() == 0.0){
-                throw std::invalid_argument("Invalid");
-}
 	    return this->left->evaluate() / this->right->evaluate(); 
 	 }
 	   virtual std::string stringify() {
 		return "("+ this->left->stringify()+ " / "+ this->right->stringify()+ ")";  
 	   }
 };
-
-
 
 
 
