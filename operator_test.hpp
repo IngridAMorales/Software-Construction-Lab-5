@@ -20,6 +20,13 @@ TEST(OperatorTest, OpEvaluateZero) {
 
     EXPECT_DOUBLE_EQ(test->evaluate(), 0.0); 
 } 
+TEST(OperatorTest, OpEvaluateTwoNeg) { 
+    Base* negseven = new NegOpMock(); 
+    Base* negnumber = new NegOpMock(); 
+    Mult* test = new Mult(negseven, negnumber); 
+
+    EXPECT_DOUBLE_EQ(test->evaluate(), 56.25); 
+}
 
 TEST(OperatorTest, OpEvaluateNeg) {
     Base* seven = new NegOpMock(); 
