@@ -13,7 +13,7 @@ TEST(SubTest, SubEvaluateNonzero) {
   Base* two = new TwoOpMock();  
   Sub* test = new Sub(add, two);
 
-  EXPECT_DOUBLE_EQ(test->evaluate(), 34.75);  
+  EXPECT_DOUBLE_EQ(test->evaluate(), 35.25);  
 }
 TEST(SubTest, SubEvaluateNeg) {
   Base* seven = new SevenOpMock();
@@ -35,7 +35,7 @@ TEST(SubTest, SubStringifyNonzero){
   Base* two = new TwoOpMock(); 
   Sub* test = new Sub(add, two);
 
-  EXPECT_EQ(test->stringify(), "((3.5+(7.5*4.5))-2.5)"); 
+  EXPECT_EQ(test->stringify(), "((3.5+(7.5*4.5))-2.0)"); 
 }
 
 TEST(SubTest, SubStringifyNeg) {

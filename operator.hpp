@@ -59,7 +59,8 @@ class Div : public Base {
 }
 	   virtual std::string stringify() {
 		return "("+ this->left->stringify()+ " / "+ this->right->stringify()+ ")"; 
-}
+	}
+};
   
 class Mult : public Base { 
 	private: 

@@ -3,13 +3,6 @@
 
 #include "base.hpp"
 
-class TwoOpMock: public Base {
-  public: 
-	TwoOpMock() { }
-	
-	virtual double evaluate() { return 2.5; }
-        virtual std::string stringify() { return "2.5"; }
-}; 
 
 class Sub: public Base {
   private: 
