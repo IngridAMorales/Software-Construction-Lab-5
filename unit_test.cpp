@@ -2,6 +2,7 @@
 
 #include "op_test.hpp"
 #include "operator_test.hpp"
+#include "power_test.hpp"
 #include "add_test.hpp"
 #include "sub_test.hpp"
 
