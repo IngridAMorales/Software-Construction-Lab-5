@@ -2,6 +2,7 @@
 #define __OPERATOR_HPP__
 
 #include "base.hpp"
+#include <stdexcept>
 
 class SevenOpMock: public Base {
     public:
@@ -34,6 +35,14 @@ class NegOpMock: public Base {
 	virtual std::string stringify() { return "-7.5"; }
 };
 
+class TwoOpMock: public Base {
+   public:
+        TwoOpMock() { }
+
+        virtual double evaluate() { return 2.0; }
+        virtual std::string stringify() { return "2.0"; }
+};
+
 class Div : public Base {
 	private:
 	  Base* left;
@@ -45,11 +54,11 @@ class Div : public Base {
 		right = op2;
 }
 	virtual double evaluate(){
-	    return this->left->evaluate() / this->right->evaluate(); 
-	 }
+		 return this->left->evaluate() / this->right->evaluate(); 
+}
 	   virtual std::string stringify() {
-		return "("+ this->left->stringify()+ " / "+ this->right->stringify()+ ")";  
-	   }
+		return "("+ this->left->stringify()+ " / "+ this->right->stringify()+ ")"; 
+}
 };
 
 
