@@ -2,7 +2,7 @@
 #define __SUB_TEST_HPP__
 
 #include "gtest/gtest.h"
-#include "Sub.hpp"
+#include "sub.hpp"
 
 TEST(SubTest, SubEvaluateNonzero) { 
   Base* seven = new SevenOpMock(); 
